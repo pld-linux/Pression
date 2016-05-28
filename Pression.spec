@@ -19,14 +19,8 @@ BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Collage is a cross-platform C++ library for building heterogenous,
-distributed applications. Among other things, it is the cluster
-backend for the Equalizer parallel rendering framework. Collage
-provides an abstraction of different network connections, peer-to-peer
-messaging, node discovery, synchronization and high-performance,
-object-oriented, versioned data distribution. Collage is designed for
-low-overhead multi-threaded execution which allows applications to
-easily exploit multi-core architectures.
+C++ library for implementing and loading compression and CPU-GPU data
+transfer plugins.
 
 %package devel
 Summary:	Header files for Pression library
