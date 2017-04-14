@@ -4,12 +4,14 @@
 
 Summary:	C++ library for compression and CPU-GPU data transfer plugins
 Name:		Pression
-Version:	1.1.1
+Version:	1.2.0
 Release:	1
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	https://github.com/Eyescale/Pression/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	0eef1d53cdfbf53feebff1dfe9980161
+# Source0-md5:	47e048b975efc681f00b62fc63951c07
+Source1:	https://github.com/facebook/zstd/archive/83543a7/zstd-83543a7.tar.gz
+# Source1-md5:	81cd6ac24a536b544e78683a373bfeec
 URL:		http://libcollage.net/
 BuildRequires:	Lunchbox-devel >= 1.13.0
 BuildRequires:	boost-devel >= 1.41.0
@@ -49,7 +51,9 @@ API documentation for Pression library.
 Dokumentacja API biblioteki Pression.
 
 %prep
-%setup -q
+%setup -q -a1
+
+%{__mv} zstd-83543a7*/* pression/compressor/zstd/
 
 ln -s %{_datadir}/Eyescale-CMake CMake/common
 %{__rm} .gitexternals
