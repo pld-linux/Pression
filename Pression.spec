@@ -6,7 +6,7 @@ Summary:	C++ library for compression and CPU-GPU data transfer plugins
 Summary(pl.UTF-8):	Biblioteka C++ do wtyczek kompresji i przesyłu danych CPU-GPU
 Name:		Pression
 Version:	2.0.0
-Release:	1
+Release:	2
 License:	LGPL v2.1
 Group:		Libraries
 #Source0Download: https://github.com/Eyescale/Pression/releases
@@ -19,6 +19,8 @@ Source2:	https://github.com/google/snappy/archive/32d6d7d/snappy-32d6d7d.tar.gz
 URL:		https://eyescale.github.io/
 BuildRequires:	Eyescale-CMake >= 2017.05
 BuildRequires:	Lunchbox-devel >= 1.16.0
+# just to satisfy cmake projects stupidity (FIXME)
+BuildRequires:	Servus-qt-devel
 BuildRequires:	boost-devel >= 1.41.0
 BuildRequires:	cmake >= 2.8
 BuildRequires:	gcc-c++ >= 6:4.2
@@ -76,8 +78,8 @@ ln -s %{_datadir}/Eyescale-CMake CMake/common
 %build
 install -d build
 cd build
-CXXFLAGS="%{rpmcxxflags} -Wno-unused-variable"
-%cmake ..
+%cmake .. \
+	-DCOMMON_DISABLE_WERROR=ON
 
 %{__make}
 
