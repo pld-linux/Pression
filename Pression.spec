@@ -6,7 +6,7 @@ Summary:	C++ library for compression and CPU-GPU data transfer plugins
 Summary(pl.UTF-8):	Biblioteka C++ do wtyczek kompresji i przesyłu danych CPU-GPU
 Name:		Pression
 Version:	2.0.0
-Release:	2
+Release:	3
 License:	LGPL v2.1
 Group:		Libraries
 #Source0Download: https://github.com/Eyescale/Pression/releases
