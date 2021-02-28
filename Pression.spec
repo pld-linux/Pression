@@ -56,9 +56,7 @@ Pliki nagłówkowe biblioteki Pression.
 Summary:	Pression API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki Pression
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for Pression library.
